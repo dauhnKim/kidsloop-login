@@ -7,10 +7,10 @@ import { BsEye, BsEyeSlash } from "react-icons/bs";
 import axios from "axios";
 import { cls } from "../utils/libs";
 
+import Button from "../components/Button";
 import FooterNav from "../components/FooterNav";
 import LangSelect from "../components/LangSelect";
 import DarkModeToggle from "../components/DarkModeToggle";
-import Button from "../components/Button";
 
 export default function SignIn() {
   const [isPwd, setIsPwd] = useState(true);
@@ -27,28 +27,30 @@ export default function SignIn() {
   } = useForm({ mode: "onBlur" });
 
   const valueOfPwd = watch("password");
-  const valueOfPwd2 = watch("password2");
 
   const onValid = async (values) => {
     setIsLoading(true);
-    console.log("values", values);
+
     const { email, password } = values;
+
     try {
-      // const { data } = await axios.post(
-      //   "https://my-json-server.typicode.com/kidsloop-test/accounts/sign-in",
-      //   {
-      //     email,
-      //     password,
-      //   }
-      // );
-      // reset();
+      const res = await axios.post(
+        "https://my-json-server.typicode.com/kidsloop-test/accounts/sign-in",
+        {
+          email,
+          password,
+        }
+      );
+      console.log("res", res.data);
+      reset();
     } catch (error) {
       console.log("error : ", error);
+    } finally {
+      setIsLoading(false);
     }
-    setIsLoading(false);
   };
 
-  console.log("errors", errors);
+  // console.log("errors", errors);
   return (
     <div className="flex flex-col space-y-3">
       <form

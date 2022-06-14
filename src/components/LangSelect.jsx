@@ -32,7 +32,6 @@ const LangSelect = () => {
     >
       <Select
         onChange={(item) => {
-          console.log("first");
           setValue(item);
           changeLocale(item);
         }}
