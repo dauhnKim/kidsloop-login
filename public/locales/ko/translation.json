@@ -5,5 +5,12 @@
   "help": "고객센터",
   "privacy": "개인정보",
   "terms": "정책",
-  "selectLang": "언어 선택"
+  "selectLang": "언어 선택",
+
+  "errEmailPattern": "이메일 형식이 올바르지 않습니다.",
+  "errEmailRequired": "이메일을 반드시 입력해 주세요.",
+
+  "errPasswordRequired": "비밀번호를 반드시 입력해 주세요.",
+  "errPasswordMinLeng": "비밀번호는 8~15자 이내로 입력해 주세요.",
+  "errPasswordMaxLeng": "비밀번호는 8~15자 이내로 입력해 주세요."
 }

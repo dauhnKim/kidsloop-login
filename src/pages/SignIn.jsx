@@ -7,10 +7,10 @@ import { BsEye, BsEyeSlash } from "react-icons/bs";
 import axios from "axios";
 import { cls } from "../utils/libs";
 
-import Loader from "../components/Loader";
 import FooterNav from "../components/FooterNav";
 import LangSelect from "../components/LangSelect";
 import DarkModeToggle from "../components/DarkModeToggle";
+import Button from "../components/Button";
 
 export default function SignIn() {
   const [isPwd, setIsPwd] = useState(true);
@@ -57,26 +57,31 @@ export default function SignIn() {
       >
         <fieldset className="flex flex-col space-y-3">
           <legend className="text-4xl leading-[1.3] font-semibold">
+            <img
+              src="/kidsloop_min_logo.png"
+              alt="kidsloop logo"
+              className="w-20 h-auto mb-3"
+            />
             {t("signIn")}
           </legend>
           <div className="relative flex flex-col items-start">
             <input
               {...register("email", {
-                required: "Email is required.",
+                required: t("errEmailRequired"),
                 pattern: {
                   value:
                     /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-                  message: "Entered value does not match email format.",
+                  message: t("errEmailPattern"),
                 },
               })}
-              className="appearance-none w-full px-3 py-2 border input-border rounded-xl placeholder-gray-400 input-focus text-black"
+              className="bg-transparent appearance-none w-full px-3 py-2 border input-border rounded-xl input-focus label-text"
               placeholder="Email or Phone"
               name="email"
               label="email"
               type="email"
               required
             />
-            <span className="ml-1 text-sm error-text">
+            <span className="ml-1 mt-1 text-xs error-text">
               {errors.email?.message}
             </span>
           </div>
@@ -84,17 +89,17 @@ export default function SignIn() {
             <div className="relative w-full flex items-center">
               <input
                 {...register("password", {
-                  required: "Password is required.",
+                  required: t("errPasswordRequired"),
                   minLength: {
-                    message: "The password should be longer than 8 chars.",
+                    message: t("errPasswordMinLeng"),
                     value: 8,
                   },
                   maxLength: {
-                    message: "The password should be less than 15 chars.",
+                    message: t("errPasswordMaxLeng"),
                     value: 15,
                   },
                 })}
-                className="appearance-none w-full px-3 py-2 border input-border rounded-xl placeholder-gray-400 input-focus text-black"
+                className="bg-transparent appearance-none w-full px-3 py-2 border input-border rounded-xl input-focus label-text"
                 placeholder="Password"
                 name="password"
                 label="password"
@@ -115,7 +120,7 @@ export default function SignIn() {
                 ))}
             </div>
 
-            <span className="ml-1 text-sm error-text">
+            <span className="ml-1 mt-1 text-xs error-text">
               {errors.password?.message}
             </span>
           </div>
@@ -127,13 +132,11 @@ export default function SignIn() {
               {t("password")}
             </Link>
 
-            <button
-              type="submit"
-              className="bg-primary text-white px-6 py-2 rounded-full hover:bg-primary/90 duration-150"
+            <Button
               disabled={isSubmitting}
-            >
-              {isLoading ? <Loader /> : t("signIn")}
-            </button>
+              isLoading={isLoading}
+              text={t("signIn")}
+            />
           </div>
           <Link
             to="/sign-up"

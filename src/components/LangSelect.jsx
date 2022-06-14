@@ -53,7 +53,7 @@ const LangSelect = () => {
         <Option value="ko">한국어</Option>
       </Select>
 
-      <style jsx>
+      <style jsx="true">
         {`
           .lang-select > div {
             width: 100vw;

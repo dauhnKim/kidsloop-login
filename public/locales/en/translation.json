@@ -5,5 +5,12 @@
   "help": "Help",
   "privacy": "Privacy",
   "terms": "Terms",
-  "selectLang": "Select Language"
+  "selectLang": "Select Language",
+
+  "errEmailPattern": "Entered value does not match email format.",
+  "errEmailRequired": "Email is required.",
+
+  "errPasswordRequired": "Password is required.",
+  "errPasswordMinLeng": "The password should be longer than 8 chars.",
+  "errPasswordMaxLeng": "The password should be less than 15 chars."
 }
