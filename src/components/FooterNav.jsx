@@ -11,7 +11,7 @@ const FooterNav = () => {
         {menus.map((menu) => (
           <li
             key={menu}
-            className="text-secondary font-bold hover:underline cursor-pointer"
+            className="text-secondary font-bold hover:underline cursor-pointer whitespace-nowrap"
           >
             {menu}
           </li>

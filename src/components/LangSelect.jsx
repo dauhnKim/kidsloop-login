@@ -60,7 +60,6 @@ const LangSelect = () => {
         {`
           .lang-select > div {
             width: 100vw;
-            max-width: 154px;
             min-width: auto;
           }
           .lang-select button {
@@ -86,6 +85,18 @@ const LangSelect = () => {
           }`
           : `.lang-select button svg {
             color: #17377b;
+          }`}
+
+        {value === "default" && i18n.language === "ko"
+          ? ` .lang-select > div {
+            max-width: 105px;
+          }`
+          : value !== "default"
+          ? ` .lang-select > div {
+            max-width: 105px;
+          }`
+          : ` .lang-select > div {
+            max-width: 154px;
           }`}
       </style>
     </div>

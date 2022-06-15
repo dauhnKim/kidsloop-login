@@ -28,7 +28,7 @@ const Wrapper = ({
   return (
     <div className="flex flex-col space-y-3">
       <form
-        className="flex flex-col p-6 rounded-lg card-bg card-shadow sm:w-auto w-[320px] sm:max-w-[368px]"
+        className="flex flex-col p-6 rounded-lg card-bg card-shadow w-[320px] sm:w-[368px]"
         onSubmit={handleSubmit(onValid)}
       >
         <fieldset className="flex flex-col space-y-3">
@@ -73,7 +73,7 @@ const Wrapper = ({
           {!isPwd && !isSignUp && (
             <Link
               to="/sign-up"
-              className="font-semibold text-secondary hover:underline"
+              className="font-semibold text-secondary hover:underline text-sm sm:text-base"
             >
               {t("creatAccount")}
             </Link>
