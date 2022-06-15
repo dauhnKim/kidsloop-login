@@ -5,8 +5,8 @@ import { isDarkAtom } from "../utils/store";
 import DarkModeToggle from "./DarkModeToggle";
 
 export default function ThemeProvider({ children }) {
-  const [theme, setTheme] = useState(`light`);
   const isDark = useAtomValue(isDarkAtom);
+  const [theme, setTheme] = useState(isDark ? "dark" : "light");
 
   useEffect(() => {
     isDark ? setTheme(`dark`) : setTheme(`light`);

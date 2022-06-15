@@ -1,15 +1,15 @@
+import { Suspense, useState } from "react";
 import { Route, Routes } from "react-router-dom";
+import { ThemeProvider as TailwindThemeProvider } from "@material-tailwind/react";
+
 import i18n from "./i18n";
+import LocaleContext from "./LocaleContext";
 
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
-import ForgotPassword from "./pages/ForgotPassword";
-
-import ThemeProvider from "./components/ThemeProvider";
-import { ThemeProvider as TailwindThemeProvider } from "@material-tailwind/react";
-import { Suspense, useState } from "react";
 import Loader from "./components/Loader";
-import LocaleContext from "./LocaleContext";
+import ThemeProvider from "./components/ThemeProvider";
+import ForgotPassword from "./pages/ForgotPassword";
 
 const App = () => {
   const [locale, setLocale] = useState(i18n.language);

@@ -5,7 +5,6 @@ import { useTranslation } from "react-i18next";
 import { BsEye, BsEyeSlash } from "react-icons/bs";
 
 import axios from "axios";
-import { cls } from "../utils/libs";
 
 import Button from "../components/Button";
 import FooterNav from "../components/FooterNav";
@@ -34,14 +33,14 @@ export default function SignIn() {
     const { email, password } = values;
 
     try {
-      const res = await axios.post(
+      const { data } = await axios.patch(
         "https://my-json-server.typicode.com/kidsloop-test/accounts/sign-in",
         {
           email,
           password,
         }
       );
-      console.log("res", res.data);
+      console.log(`Welcome, ${data.name}!`);
       reset();
     } catch (error) {
       console.log("error : ", error);
@@ -50,7 +49,6 @@ export default function SignIn() {
     }
   };
 
-  // console.log("errors", errors);
   return (
     <div className="flex flex-col space-y-3">
       <form
@@ -59,11 +57,11 @@ export default function SignIn() {
       >
         <fieldset className="flex flex-col space-y-3">
           <legend className="text-4xl leading-[1.3] font-semibold">
-            <img
+            {/* <img
               src="/kidsloop_min_logo.png"
               alt="kidsloop logo"
               className="w-20 h-auto mb-3"
-            />
+            /> */}
             {t("signIn")}
           </legend>
           <div className="relative flex flex-col items-start">

@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Option, Select } from "@material-tailwind/react";
 
 import { useAtomValue } from "jotai";
@@ -25,16 +25,20 @@ const LangSelect = () => {
     }
   };
 
+  const onSelectChange = (item) => {
+    localStorage.setItem("language", item);
+
+    setValue(item);
+    changeLocale(item);
+  };
+
   return (
     <div
       className="lang-select max-w-[134px]"
       onClick={() => setIsClicked(!isClicked)}
     >
       <Select
-        onChange={(item) => {
-          setValue(item);
-          changeLocale(item);
-        }}
+        onChange={(item) => onSelectChange(item)}
         className="!border-none font-bold text-secondary text-base "
         variant="static"
         value={value}

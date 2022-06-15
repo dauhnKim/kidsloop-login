@@ -1,3 +1,8 @@
 const { atom } = require("jotai");
 
-export const isDarkAtom = atom(false);
+const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+const localTheme = localStorage.getItem("mode");
+
+export const isDarkAtom = atom(
+  localTheme || localTheme === "dark" ? "dark" : prefersDark ? "dark" : "light"
+);
