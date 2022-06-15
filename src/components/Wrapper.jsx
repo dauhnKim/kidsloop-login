@@ -16,6 +16,7 @@ const Wrapper = ({
   onValid,
   isLoading,
   isPwd = false,
+  isSignUp = false,
   children,
 }) => {
   const { t } = useTranslation();
@@ -66,7 +67,7 @@ const Wrapper = ({
               text={t(buttonText)}
             />
           </div>
-          {!isPwd && (
+          {!isPwd && !isSignUp && (
             <Link
               to="/sign-up"
               className="font-semibold text-secondary hover:underline"

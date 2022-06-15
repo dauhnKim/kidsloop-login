@@ -22,5 +22,7 @@
   "forgotPasswordDesc1": "Please enter a One Time Password (OTP) below.",
   "forgotPasswordDesc2": "Please enter your new password.",
   "forgotPasswordBtn0": "Continue",
-  "forgotPasswordBtn1": "Save"
+  "forgotPasswordBtn1": "Save",
+
+  "signUp": "Sign Up"
 }

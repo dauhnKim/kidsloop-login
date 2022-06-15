@@ -1,15 +1,16 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 import axios from "axios";
 
 import Wrapper from "../components/Wrapper";
 import InputPassword from "../components/InputPassword";
-import { useNavigate, useRoutes } from "react-router-dom";
 
 const ForgotPassword = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
   const [step, setStep] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
   const [dynamicText, setDynamicText] = useState({
@@ -17,8 +18,6 @@ const ForgotPassword = () => {
     desc: "forgotPasswordDesc0",
     buttonText: "forgotPasswordBtn0",
   });
-
-  const { t } = useTranslation();
 
   const {
     reset,
@@ -37,7 +36,6 @@ const ForgotPassword = () => {
         desc: "forgotPasswordDesc1",
         title: "forgotPassword1",
       }));
-      console.log("step 1");
       return;
     }
 
@@ -48,7 +46,6 @@ const ForgotPassword = () => {
         desc: "forgotPasswordDesc2",
         title: "forgotPassword2",
       }));
-      console.log("step 2");
       return;
     }
 
@@ -80,13 +77,12 @@ const ForgotPassword = () => {
     >
       {step === 0 && (
         <div className="relative flex flex-col items-start">
-          <p className="text-sm mb-4">{t(dynamicText.desc)}</p>
+          <p className="text-sm mb-8">{t(dynamicText.desc)}</p>
           <input
             {...register("email", {
               required: t("errEmailRequired"),
               pattern: {
-                value:
-                  /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+                value: /\S+@\S+\.\S+/,
                 message: t("errEmailPattern"),
               },
             })}
@@ -105,7 +101,7 @@ const ForgotPassword = () => {
 
       {step === 1 && (
         <div className="relative flex flex-col items-start">
-          <p className="text-sm mb-4">{t(dynamicText.desc)}</p>
+          <p className="text-sm mb-8">{t(dynamicText.desc)}</p>
           <input
             {...register("otp", {
               required: t("errEmailRequired"),
@@ -129,7 +125,7 @@ const ForgotPassword = () => {
 
       {step === 2 && (
         <div className="relative flex flex-col items-start">
-          <p className="text-sm mb-4">{t(dynamicText.desc)}</p>
+          <p className="text-sm mb-8">{t(dynamicText.desc)}</p>
 
           <InputPassword
             {...register("password", {
@@ -145,40 +141,6 @@ const ForgotPassword = () => {
             })}
             valueOfPwd={valueOfPwd}
           />
-          {/* <div className="relative w-full flex items-center">
-            <input
-              {...register("password", {
-                required: t("errPasswordRequired"),
-                minLength: {
-                  message: t("errPasswordMinLeng"),
-                  value: 8,
-                },
-                maxLength: {
-                  message: t("errPasswordMaxLeng"),
-                  value: 15,
-                },
-              })}
-              className="bg-transparent appearance-none w-full px-3 py-2 border input-border rounded-xl input-focus label-text"
-              placeholder="Password"
-              name="password"
-              label="password"
-              type={isPwd ? "password" : "text"}
-              required
-            />
-            {valueOfPwd?.length > 0 &&
-              (isPwd ? (
-                <BsEye
-                  className="w-5 h-5 absolute right-5 cursor-pointer label-text"
-                  onClick={() => setIsPwd(!isPwd)}
-                />
-              ) : (
-                <BsEyeSlash
-                  className="w-5 h-5 absolute right-5 cursor-pointer label-text"
-                  onClick={() => setIsPwd(!isPwd)}
-                />
-              ))}
-          </div> */}
-
           <span className="ml-1 mt-1 text-xs error-text">
             {errors.password?.message}
           </span>
