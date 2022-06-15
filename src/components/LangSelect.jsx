@@ -95,8 +95,14 @@ const LangSelect = () => {
           ? ` .lang-select > div {
             max-width: 105px;
           }`
-          : ` .lang-select > div {
-            max-width: 154px;
+          : `
+          .lang-select > div {
+              max-width: 154px;
+            }
+          @media screen and (max-width: 540px) {
+            .lang-select > div {
+              max-width: 140px;
+            }
           }`}
       </style>
     </div>
