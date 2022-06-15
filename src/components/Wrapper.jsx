@@ -34,11 +34,11 @@ const Wrapper = ({
       >
         <fieldset className="flex flex-col space-y-3">
           <legend className="text-4xl leading-[1.3] font-semibold">
-            {/* <img
+            <img
               src="/kidsloop_min_logo.png"
               alt="kidsloop logo"
               className="w-20 h-auto mb-3"
-            /> */}
+            />
             {t(title)}
           </legend>
 
