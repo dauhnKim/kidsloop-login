@@ -24,11 +24,13 @@ const ForgotPassword = () => {
     watch,
     register,
     formState: { errors },
-  } = useForm({ mode: "onBlur" });
+  } = useForm({ mode: "all" });
 
   const valueOfPwd = watch("password");
 
   const onValid = async (values) => {
+    if (Object.keys(errors).length !== 0) return;
+
     if (step === 0) {
       setStep(1);
       setDynamicText((prev) => ({
@@ -74,6 +76,7 @@ const ForgotPassword = () => {
       buttonText={dynamicText.buttonText}
       isPwd={true}
       isLoading={isLoading}
+      hasError={Object.keys(errors).length === 0 ? false : true}
     >
       {step === 0 && (
         <div className="relative flex flex-col items-start">
