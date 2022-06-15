@@ -17,7 +17,7 @@
 
   "forgotPassword0": "Password assistance",
   "forgotPassword1": "Verification required",
-  "forgotPassword2": "Create new password",
+  "forgotPassword2": "Create a new password",
   "forgotPasswordDesc0": "Enter the email address associated with your account.",
   "forgotPasswordDesc1": "Please enter a One Time Password (OTP) below.",
   "forgotPasswordDesc2": "Please enter your new password.",

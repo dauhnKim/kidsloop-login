@@ -29,7 +29,7 @@ const Wrapper = ({
   return (
     <div className="flex flex-col space-y-3">
       <form
-        className="flex flex-col w-auto p-6 rounded-lg card-bg card-shadow min-w-[368px]"
+        className="flex flex-col p-6 rounded-lg card-bg card-shadow w-[368px]"
         onSubmit={handleSubmit(onValid)}
       >
         <fieldset className="flex flex-col space-y-3">
