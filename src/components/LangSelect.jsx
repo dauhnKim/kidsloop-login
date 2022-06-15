@@ -39,7 +39,7 @@ const LangSelect = () => {
     >
       <Select
         onChange={(item) => onSelectChange(item)}
-        className="!border-none font-bold text-secondary text-base "
+        className="!border-none font-bold text-secondary text-sm sm:text-base"
         variant="static"
         value={value}
       >
@@ -47,7 +47,7 @@ const LangSelect = () => {
           value="default"
           className={cls(
             isClicked ? "h-0 pointer-events-none" : "h-0",
-            "block  leading-[0.2]"
+            "block  leading-[0.2] "
           )}
         >
           {t("selectLang")}

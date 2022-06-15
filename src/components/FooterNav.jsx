@@ -7,7 +7,7 @@ const FooterNav = () => {
   const menus = [t("help"), t("privacy"), t("terms")];
   return (
     <nav>
-      <ul className="flex space-x-3">
+      <ul className="flex space-x-3 text-sm sm:text-base">
         {menus.map((menu) => (
           <li
             key={menu}

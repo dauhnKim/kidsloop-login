@@ -30,7 +30,9 @@ const DarkModeToggle = ({ isTop = true, className, size }) => {
       checked={isDarkMode}
       onChange={toggleDarkMode}
       size={isTop ? 30 : size}
-      className={cls(isTop ? "absolute top-10 right-10" : className)}
+      className={cls(
+        isTop ? "absolute top-5 right-5 sm:top-10 sm:right-10" : className
+      )}
     />
   );
 };

@@ -29,11 +29,11 @@ const Wrapper = ({
   return (
     <div className="flex flex-col space-y-3">
       <form
-        className="flex flex-col p-6 rounded-lg card-bg card-shadow w-[368px]"
+        className="flex flex-col p-6 rounded-lg card-bg card-shadow sm:w-auto w-[320px] sm:max-w-[368px]"
         onSubmit={handleSubmit(onValid)}
       >
         <fieldset className="flex flex-col space-y-3">
-          <legend className="text-4xl leading-[1.3] font-semibold">
+          <legend className="text-[28px] sm:text-4xl leading-[1.3] font-semibold">
             <img
               src="/kidsloop_min_logo.png"
               alt="kidsloop logo"
@@ -44,7 +44,11 @@ const Wrapper = ({
 
           {children}
 
-          <div className={cls("flex items-center justify-between")}>
+          <div
+            className={cls(
+              "flex items-center justify-between text-sm sm:text-base"
+            )}
+          >
             {!isPwd ? (
               <Link
                 to="/forgot-password"
@@ -77,7 +81,7 @@ const Wrapper = ({
           )}
         </fieldset>
       </form>
-      <div className="flex justify-between items-center">
+      <div className="flex justify-between items-center w-auto max-w-[320px] sm:max-w-[368px]">
         <div className="flex items-center space-x-2">
           <DarkModeToggle isTop={false} size={20} />
           <LangSelect />
