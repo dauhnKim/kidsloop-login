@@ -12,5 +12,15 @@
 
   "errPasswordRequired": "비밀번호를 반드시 입력해 주세요.",
   "errPasswordMinLeng": "비밀번호는 8~15자 이내로 입력해 주세요.",
-  "errPasswordMaxLeng": "비밀번호는 8~15자 이내로 입력해 주세요."
+  "errPasswordMaxLeng": "비밀번호는 8~15자 이내로 입력해 주세요.",
+  "errOtpLeng": "OTP는 4자로 입력해 주세요.",
+
+  "forgotPassword0": "이메일 입력",
+  "forgotPassword1": "OTP 입력",
+  "forgotPassword2": "새 비밀번호 입력",
+  "forgotPasswordDesc0": "인증번호를 받기 위한 이메일을 입력해 주세요.",
+  "forgotPasswordDesc1": "받으신 OTP를 입력해 주세요.",
+  "forgotPasswordDesc2": "신규 비밀번호를 입력해 주세요.",
+  "forgotPasswordBtn0": "계속",
+  "forgotPasswordBtn1": "완료"
 }

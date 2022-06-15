@@ -12,5 +12,15 @@
 
   "errPasswordRequired": "Password is required.",
   "errPasswordMinLeng": "The password should be longer than 8 chars.",
-  "errPasswordMaxLeng": "The password should be less than 15 chars."
+  "errPasswordMaxLeng": "The password should be less than 15 chars.",
+  "errOtpLeng": "The OTP should be 4 chars.",
+
+  "forgotPassword0": "Password assistance",
+  "forgotPassword1": "Verification required",
+  "forgotPassword2": "Create new password",
+  "forgotPasswordDesc0": "Enter the email address associated with your account.",
+  "forgotPasswordDesc1": "Please enter a One Time Password (OTP) below.",
+  "forgotPasswordDesc2": "Please enter your new password.",
+  "forgotPasswordBtn0": "Continue",
+  "forgotPasswordBtn1": "Save"
 }
