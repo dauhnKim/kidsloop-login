@@ -17,6 +17,7 @@ const Wrapper = ({
   isLoading,
   isPwd = false,
   isSignUp = false,
+  hasError = false,
   children,
 }) => {
   const { t } = useTranslation();
@@ -24,7 +25,6 @@ const Wrapper = ({
     handleSubmit,
     formState: { isSubmitting },
   } = useForm({ mode: "onBlur" });
-
   return (
     <div className="flex flex-col space-y-3">
       <form
@@ -65,7 +65,7 @@ const Wrapper = ({
             )}
 
             <Button
-              disabled={isSubmitting}
+              disabled={isSubmitting || hasError}
               isLoading={isLoading}
               text={t(buttonText)}
             />

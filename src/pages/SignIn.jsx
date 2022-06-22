@@ -19,11 +19,13 @@ const SignIn = () => {
     watch,
     register,
     formState: { errors },
-  } = useForm({ mode: "onBlur" });
+  } = useForm({ mode: "all" });
 
   const valueOfPwd = watch("password");
 
   const onValid = async (values) => {
+    if (Object.keys(errors).length !== 0) return;
+
     setIsLoading(true);
 
     const { email, password } = values;
@@ -51,6 +53,7 @@ const SignIn = () => {
       buttonText={"signIn"}
       onValid={onValid}
       isLoading={isLoading}
+      hasError={Object.keys(errors).length === 0 ? false : true}
     >
       <div className="relative flex flex-col items-start">
         <input
